@@ -1,0 +1,18 @@
+<ion-view view-title="Home">
+  <ion-content class="padding">
+    <h2 style="text-align: center">Welcome to Boxie</h2>
+    <div ng-click="handleAction('receive')" class="button-ios-rounded" style="background-color: #11c1f3">
+      <div><i class="ion-android-exit"></i></div>
+      <span style="">Receive</span>
+    </div>
+    <div modal-select class="button-ios-rounded" ng-model="scanOrList" options="selectOptions"
+         style="background-color: #11c1f3" hide-reset="true" on-select="handleAction('send', newValue)">
+      <div><i class="ion-android-open"></i></div>
+      <span style="">Send</span>
+      <div class="option">
+        {{option}}
+      </div>
+    </div>
+  </ion-content>
+
+</ion-view>

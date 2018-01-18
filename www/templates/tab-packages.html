@@ -1,0 +1,20 @@
+<ion-view cache-view="false" view-title="Packages">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate item-icon-right" ng-repeat="package in packages"
+                type="item-text-wrap" href="#/tab/packages/{{package.id}}" ng-if="package.statusField=='true'">
+        <h2>{{package.serialNumber}}</h2>
+        <p>{{package.length}} * {{package.width}} * {{package.height}} </p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+
+      <ion-item class="item-remove-animate item-icon-right" ng-repeat="package in packages"
+                type="item-text-wrap" ng-if="package.statusField=='false'">
+        <h2>{{package.serialNumber}}</h2>
+        <p>{{package.length}} * {{package.width}} * {{package.height}} </p>
+        <p>You need to scan it to be added permanently</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

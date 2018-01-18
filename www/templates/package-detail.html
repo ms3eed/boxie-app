@@ -1,0 +1,51 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view view-title="{{package.serialNumber}}">
+  <ion-content class="padding">
+    <div class="mainDiv">
+      <div class="square" ng-style="{'height': package.height+'px', 'width': package.width+'px'}"></div>
+      <div class="square2" ng-style="{'height': package.height+'px', 'width': package.length+'px'}"></div>
+      <div class="square3"  ng-style="{'height': package.width+'px', 'width': adjustedWidth +'px'}"></div>
+    </div>
+
+    <p>
+      {{package.serialNumber}}
+    </p>
+
+    <span style="margin-top: 20px; text-align: center;">
+      <button  ng-click="modal.show()" class="button button-calm">
+      Send Package
+    </button>
+      </span>
+  </ion-content>
+
+  <script id="templates/modal.html" type="text/ng-template">
+    <ion-modal-view>
+      <ion-header-bar class="bar bar-header bar-positive">
+        <h1 class="title">Receiver Details</h1>
+        <button class="button button-clear button-primary" ng-click="modal.hide()">Cancel</button>
+      </ion-header-bar>
+      <ion-content class="padding">
+        <div class="list">
+          <label class="item item-input">
+            <span class="input-label">Name</span>
+            <input ng-model="user.name" type="text">
+          </label>
+          <label class="item item-input">
+            <span class="input-label">Telephone</span>
+            <input ng-model="user.phone" type="tel">
+          </label>
+          <label class="item item-input">
+            <span class="input-label">Address</span>
+            <textarea ng-model="user.address" rows="5"></textarea>
+          </label>
+          <button class="button button-full button-positive" ng-click="send(user)">Send</button>
+        </div>
+      </ion-content>
+    </ion-modal-view>
+  </script>
+</ion-view>
